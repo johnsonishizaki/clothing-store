@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Johnson Clothing Store</title>
+    <title>Cyberpunk Store</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Johnson Clothing Store</h1>
+<header>
+    <h1>⚡ CYBERPUNK STORE ⚡</h1>
+    <p>Neon Fashion Marketplace</p>
+</header>
 
-<div>
-    <h2>Shirt</h2>
-    <p>ID: 001</p>
-    <p>Size: M</p>
-    <p>Price: GHS 50</p>
+<div class="grid">
+
+    <div class="card">
+        <h2>Neon Shirt</h2>
+        <p>ID: 001</p>
+        <p>Size: M</p>
+        <p>Price: GHS 50</p>
+        <button onclick="order('Neon Shirt','001','M','50')">ORDER</button>
+    </div>
+
+    <div class="card">
+        <h2>Holo Trousers</h2>
+        <p>ID: 002</p>
+        <p>Size: L</p>
+        <p>Price: GHS 80</p>
+        <button onclick="order('Holo Trousers','002','L','80')">ORDER</button>
+    </div>
+
 </div>
 
-<div>
-    <h2>Trousers</h2>
-    <p>ID: 002</p>
-    <p>Size: L</p>
-    <p>Price: GHS 80</p>
+<div id="orderBox" class="modal">
+  <div class="modal-content">
+    <h2>PLACE ORDER</h2>
+    <p id="itemInfo"></p>
+    <input id="name" placeholder="NEON NAME">
+    <input id="phone" placeholder="CONTACT CODE">
+    <button onclick="submitOrder()">CONFIRM</button>
+    <button onclick="closeModal()">CLOSE</button>
+  </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
