@@ -1,47 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Cyberpunk Store</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>Cyber Shop PRO</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 <body>
 
-<header>
-    <h1>⚡ CYBERPUNK STORE ⚡</h1>
-    <p>Neon Fashion Marketplace</p>
+<header class="navbar">
+  <h1>⚡ Cyber Shop</h1>
+  <input type="text" id="search" placeholder="Search...">
 </header>
 
-<div class="grid">
+<div class="container">
+  <aside class="sidebar">
+    <button onclick="filter('all')">All</button>
+    <button onclick="filter('clothes')">Clothes</button>
+    <button onclick="filter('tech')">Tech</button>
+  </aside>
 
-    <div class="card">
-        <h2>Neon Shirt</h2>
-        <p>ID: 001</p>
-        <p>Size: M</p>
-        <p>Price: GHS 50</p>
-        <button onclick="order('Neon Shirt','001','M','50')">ORDER</button>
-    </div>
+  <main id="products"></main>
 
-    <div class="card">
-        <h2>Holo Trousers</h2>
-        <p>ID: 002</p>
-        <p>Size: L</p>
-        <p>Price: GHS 80</p>
-        <button onclick="order('Holo Trousers','002','L','80')">ORDER</button>
-    </div>
-
+  <aside class="cart">
+    <h2>Cart</h2>
+    <div id="cart-items"></div>
+    <h3 id="total"></h3>
+    <button onclick="checkout()">Checkout</button>
+  </aside>
 </div>
 
-<div id="orderBox" class="modal">
-  <div class="modal-content">
-    <h2>PLACE ORDER</h2>
-    <p id="itemInfo"></p>
-    <input id="name" placeholder="NEON NAME">
-    <input id="phone" placeholder="CONTACT CODE">
-    <button onclick="submitOrder()">CONFIRM</button>
-    <button onclick="closeModal()">CLOSE</button>
-  </div>
-</div>
-
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
